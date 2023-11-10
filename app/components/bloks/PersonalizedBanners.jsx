@@ -3,7 +3,7 @@ import {storyblokEditable, StoryblokComponent} from '@storyblok/react';
 
 const PersonalizedBanners = ({blok}) => {
   // const user_type = getCookie('user_type') || '';
-  const variant = blok.variants.filter((v) => v.user_type === '');
+  const variant = blok.variants.filter((v) => v.user_type === 'performance');
 
   return (
     <div

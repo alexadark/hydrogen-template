@@ -1,6 +1,7 @@
 import {Link} from '@remix-run/react';
 import Menu from './Menu';
 import CartIcon from './cart/CartIcon';
+import logo from '~/assets/ride_logo.avif';
 import Headroom from 'react-headroom';
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
         <div className="flex items-center space-x-20">
           <h1>
             <Link to="/">
-              <img src="/images/ride_logo.avif" alt="logo" />
+              <img src={logo} alt="logo" />
             </Link>
           </h1>
           <Menu />

@@ -19,6 +19,25 @@ import {
 import {createRequestHandler} from '@netlify/remix-edge-adapter';
 import type {Context} from '@netlify/edge-functions';
 
+function setContentSecurityPolicy(response, env) {
+  const csp = `
+  default-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.shopify.com https://shopify.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.shopify.com https://shopify.com app.storyblok.com bridge.storyblok.com localhost:3000 https://unpkg.com;
+  style-src 'self' 'unsafe-inline' https://cdn.shopify.com https://fonts.googleapis.com app.storyblok.com bridge.storyblok.com localhost:3000 https://unpkg.com;
+  img-src *;
+  font-src 'self' data: *;
+  connect-src 'self' ${env.PUBLIC_STORE_DOMAIN} https://cdn.shopify.com https://shopify.com localhost:3000;
+  frame-src 'self' app.storyblok.com bridge.storyblok.com;
+  frame-ancestors 'self' app.storyblok.com bridge.storyblok.com;
+
+  `;
+  response.headers.set(
+    'Content-Security-Policy',
+    csp.trim().replace(/\n/g, ' '),
+  );
+  return response;
+}
+
 export default async function handler(
   request: Request,
   context: Context,
@@ -93,6 +112,8 @@ export default async function handler(
        */
       return storefrontRedirect({request, response, storefront});
     }
+    // Apply the Content Security Policy to the response
+    setContentSecurityPolicy(response, env);
 
     return response;
   } catch (error) {

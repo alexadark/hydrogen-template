@@ -1,5 +1,5 @@
 import {Await, useMatches} from '@remix-run/react';
-import {json} from '@shopify/remix-oxygen';
+import {json} from '@netlify/remix-runtime';
 import {CartForm} from '@shopify/hydrogen';
 import invariant from 'invariant';
 import {CartContent, CartEmpty} from '~/components/cart';

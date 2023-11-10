@@ -22,6 +22,7 @@
     "@shopify/cli": "3.50.0",
     "@shopify/cli-hydrogen": "^6.0.0",
     "@shopify/hydrogen": "^2023.10.0",
+    "@storyblok/react": "^2.4.7",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "isbot": "^3.6.6",

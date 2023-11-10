@@ -9,7 +9,7 @@ import {storyblokInit, apiPlugin} from '@storyblok/react';
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {Layout} from './components/Layout';
-import {defer} from '@shopify/remix-oxygen';
+import {defer} from '@netlify/remix-runtime';
 import {Seo} from '@shopify/hydrogen';
 import Page from './components/bloks/Page';
 import Banner from './components/bloks/Banner';

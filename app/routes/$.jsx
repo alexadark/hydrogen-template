@@ -1,5 +1,5 @@
 import {useLoaderData} from '@remix-run/react';
-import {json} from '@shopify/remix-oxygen';
+import {json} from '@netlify/remix-runtime';
 
 import {
   getStoryblokApi,

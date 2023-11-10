@@ -1,6 +1,6 @@
 import {useLoaderData} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
-import {json} from '@shopify/remix-oxygen';
+import {json} from '@netlify/remix-runtime';
 import ProductGrid from '~/components/ProductGrid';
 import {getCookie, setCookie} from 'react-use-cookie';
 

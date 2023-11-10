@@ -9,3 +9,6 @@ node_modules
 
 # Local Netlify folder
 .netlify
+
+localhost-key.pem
+localhost.pem

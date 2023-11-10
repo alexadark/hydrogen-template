@@ -1,5 +1,4 @@
 import {Link} from '@remix-run/react';
-import logo from '~/assets/ride_logo.avif';
 const Footer = () => {
   return (
     <footer>
@@ -7,7 +6,7 @@ const Footer = () => {
         <div className="flex gap-3 items-center max-w-[400px]">
           <h1>
             <Link to="/">
-              <img src={logo} alt="logo" />
+              <img src="/images/ride_logo.avif" alt="logo" />
             </Link>
           </h1>
           <p>

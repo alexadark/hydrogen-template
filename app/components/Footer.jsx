@@ -1,12 +1,12 @@
 import {Link} from '@remix-run/react';
-// import logo from '~/assets/ride_logo.avif';
+import logo from '~/assets/ride_logo.avif';
 const Footer = () => {
   return (
     <footer>
-      <div className="center-container p-20">
+      <div className="p-20 center-container">
         <div className="flex gap-3 items-center max-w-[400px]">
           <h1>
-            <Link to="/">{/* <img src={logo} alt="logo" /> */}</Link>
+            <Link to="/"><img src={logo} alt="logo" /></Link>
           </h1>
           <p>
             We find freedom in the waves, and our journey to find those waves is

@@ -1,9 +1,16 @@
-import {getCookie} from 'react-use-cookie';
 import {storyblokEditable, StoryblokComponent} from '@storyblok/react';
+function getCookie(name) {
+  if (typeof document !== 'undefined') {
+    const value = ` ${document.cookie}`;
+    const parts = value.split(`${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+  return '';
+}
 
 const PersonalizedGrid = ({blok}) => {
-  // const user_type = getCookie('user_type') || '';
-  const variant = blok.variants.filter((v) => v.user_type === '');
+  const userType = getCookie('user_type');
+  const variant = blok.variants.filter((v) => v.user_type === userType);
 
   return (
     <div key={blok._uid} {...storyblokEditable(blok)}>

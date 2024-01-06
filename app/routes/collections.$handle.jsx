@@ -2,7 +2,6 @@ import {useLoaderData} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import {json} from '@netlify/remix-runtime';
 import ProductGrid from '~/components/ProductGrid';
-import {getCookie, setCookie} from 'react-use-cookie';
 
 const seo = ({data}) => ({
   title: data?.collection?.title,
@@ -37,9 +36,17 @@ export async function loader({params, context, request}) {
 export default function Collection() {
   const {collection} = useLoaderData();
   // personalization: we set the user type to the collection title that the user is currently viewing
-  // if (!getCookie('user_type)') && collection) {
-  //   setCookie('user_type', collection.handle);
-  // }
+  if (typeof window !== 'undefined' && document) {
+    const userType = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('user_type='))
+      ?.split('=')[1];
+
+    if (!userType && collection) {
+      document.cookie = `user_type=${collection.handle}; path=/`;
+    }
+  }
+
   return (
     <>
       <div>

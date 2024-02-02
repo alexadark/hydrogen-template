@@ -1,5 +1,6 @@
 import {Link} from '@remix-run/react';
-import logo from '~/assets/sb-logo.svg';
+import sbLogo from '~/assets/sb-logo.svg';
+import logo from '~/assets/ride_logo.avif';
 const Footer = () => {
   return (
     <footer>
@@ -24,7 +25,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={logo} alt="storyblok-logo" className="mx-2" />
+            <img src={sbLogo} alt="storyblok-logo" className="mx-2" />
           </a>
           and
           <a

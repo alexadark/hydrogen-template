@@ -1,7 +1,7 @@
 import {Await, useMatches} from '@remix-run/react';
 import {json} from '@netlify/remix-runtime';
 import {CartForm} from '@shopify/hydrogen';
-import invariant from 'invariant';
+
 import {CartContent, CartEmpty} from '~/components/cart';
 import {Suspense} from 'react';
 
@@ -24,7 +24,7 @@ export async function action({request, context}) {
       result = await cart.removeLines(inputs.lineIds);
       break;
     default:
-      invariant(false, `${action} cart action is not defined`);
+     `${action} cart action is not defined`;
   }
 
   // The Cart ID might change after each mutation, so update it each time.

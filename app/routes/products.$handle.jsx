@@ -1,5 +1,5 @@
 import {useLoaderData} from '@remix-run/react';
-import {json} from 'react-router';
+import {json} from '@netlify/remix-runtime';
 import {Image, Money, ShopPayButton} from '@shopify/hydrogen';
 import {AddToCartButton} from '~/components/cart';
 

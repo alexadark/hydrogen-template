@@ -1,12 +1,14 @@
 import {Link} from '@remix-run/react';
-import logo from '~/assets/ride_logo.avif';
+import logo from '~/assets/sb-logo.svg';
 const Footer = () => {
   return (
     <footer>
       <div className="p-20 center-container">
         <div className="flex gap-3 items-center max-w-[400px]">
           <h1>
-            <Link to="/"><img src={logo} alt="logo" /></Link>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </h1>
           <p>
             We find freedom in the waves, and our journey to find those waves is
@@ -22,11 +24,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              src="/images/sb-logo.svg"
-              alt="storyblok-logo"
-              className="mx-2"
-            />
+            <img src={logo} alt="storyblok-logo" className="mx-2" />
           </a>
           and
           <a
